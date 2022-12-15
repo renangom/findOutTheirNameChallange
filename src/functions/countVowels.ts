@@ -1,6 +1,6 @@
 
 //this function receives a text and returns the number of vowels inside the text
-export default function countVowels(text:string):number {
+export default function countVowels(text:string, numberOfVowels:number):boolean {
     const vowels: Array<string> = ["a", "e", "i", "o", "u"]
     let vowelsCount:number = 0;
     let i;
@@ -9,5 +9,9 @@ export default function countVowels(text:string):number {
             vowelsCount++
         }
     }
-    return vowelsCount;
+    if(vowelsCount === numberOfVowels){
+        return true;
+    }else{
+        return false;
+    }
 }
