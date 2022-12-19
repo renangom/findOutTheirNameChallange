@@ -12,7 +12,7 @@ routes.post("/names",checkingBody, (req:Request, res:Response) => {
     const includes:string =  req.body.includes;
     const beginsWith:string = req.body.beginsWith;
     const vowels:number = Number(req.body.vowels);
-    const syllabes:number = Number(req.body.syllabes);
+    const syllables:number = Number(req.body.syllables);
 
    
     let namesArray: Array<string> = []
@@ -33,7 +33,7 @@ routes.post("/names",checkingBody, (req:Request, res:Response) => {
     });
     rl.on("close", () => {
         let namesFounded: Array<string> = []
-        namesFounded = findName(namesArray, includes, beginsWith, vowels,syllabes);
+        namesFounded = findName(namesArray, includes, beginsWith, vowels,syllables);
         if(namesArray.length === 0){
             res.json("There are no names with this parameters")
         }else if(namesArray.length === 1){
